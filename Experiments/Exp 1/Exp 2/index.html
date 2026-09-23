@@ -1,1 +1,117 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 25px;
+            margin: auto;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Billing Calculator</h2>
+
+        <input type="text" id="item" placeholder="Enter item name">
+
+        <input type="number" id="price" placeholder="Enter price">
+
+        <input type="number" id="quantity" placeholder="Enter quantity">
+
+        <button onclick="calculateBill()">Calculate Bill</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // Using var
+        var shopName = "My Shop";
+
+        function calculateBill() {
+
+            // Using const for user input
+            const item = document.getElementById("item").value;
+            const price = Number(document.getElementById("price").value);
+            let quantity = Number(document.getElementById("quantity").value);
+
+            // Checking user input
+            if (item === "" || price <= 0 || quantity <= 0) {
+                alert("Please enter valid details.");
+                return;
+            }
+
+            // Using let for calculations
+            let total = price * quantity;
+            let tax = total * 0.05;
+            let finalAmount = total + tax;
+
+            // Object creation
+            const bill = {
+                item,
+                price,
+                quantity,
+                total,
+                tax,
+                finalAmount
+            };
+
+            // Destructuring
+            const {
+                item: productName,
+                price: productPrice,
+                quantity: productQuantity,
+                finalAmount: amount
+            } = bill;
+
+            // Template literals
+            const output = `
+                <h3>${shopName}</h3>
+                <p>Item: ${productName}</p>
+                <p>Price: ₹${productPrice}</p>
+                <p>Quantity: ${productQuantity}</p>
+                <p>Total: ₹${total.toFixed(2)}</p>
+                <p>Tax (5%): ₹${tax.toFixed(2)}</p>
+                <h3>Final Amount: ₹${amount.toFixed(2)}</h3>
+            `;
+
+            document.getElementById("result").innerHTML = output;
+        }
+    </script>
+
+</body>
+</html>
