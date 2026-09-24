@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JSON Data using Fetch and jQuery</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <h1>User Data</h1>
+
+    <button id="fetchBtn">Load using Fetch</button>
+    <button id="jqueryBtn">Load using jQuery</button>
+
+    <p id="status"></p>
+
+    <table id="userTable">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+
+        <tbody id="tableBody">
+            <!-- Data will be displayed here -->
+        </tbody>
+
+    </table>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
