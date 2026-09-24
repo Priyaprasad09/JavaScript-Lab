@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Basics</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Internal JavaScript -->
+    <script>
+        console.log("Internal JavaScript is working!");
+        console.log("Welcome to JavaScript Lab Assignment 1");
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>JavaScript Basics</h1>
+
+        <h2 id="welcomeMessage">Welcome!</h2>
+
+        <h3>User Information</h3>
+
+        <p id="userInfo">User information will appear here.</p>
+
+        <!-- Inline JavaScript -->
+        <button onclick="alert('Hello! Welcome to JavaScript.')">
+            Click Me (Inline JS)
+        </button>
+
+        <br><br>
+
+        <button onclick="displayUserInfo()">
+            Show User Information
+        </button>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
