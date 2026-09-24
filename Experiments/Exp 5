@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Cart Discount Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>🛒 Smart Cart</h1>
+        <p>Add items and calculate your discount</p>
+
+        <!-- Add Item Section -->
+        <div class="card">
+            <h2>Add Item</h2>
+
+            <label>Item Name:</label>
+            <input type="text" id="itemName" placeholder="Enter item name">
+
+            <label>Price (₹):</label>
+            <input type="number" id="itemPrice" placeholder="Enter price">
+
+            <label>Quantity:</label>
+            <input type="number" id="itemQty" value="1" min="1">
+
+            <button onclick="addItem()">Add to Cart</button>
+
+            <p id="errorMsg"></p>
+        </div>
+
+        <!-- Cart Section -->
+        <div class="card">
+            <h2>Your Cart</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="cartBody"></tbody>
+            </table>
+        </div>
+
+        <!-- Bill Summary -->
+        <div class="card">
+            <h2>Bill Summary</h2>
+
+            <p>Total Amount: ₹<span id="totalValue">0.00</span></p>
+
+            <p>Discount:
+                <span id="discountPercent">0</span>%
+            </p>
+
+            <p>Discount Amount: ₹<span id="discountValue">0.00</span></p>
+
+            <h2>
+                Final Amount: ₹<span id="finalValue">0.00</span>
+            </h2>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
